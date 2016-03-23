@@ -1,0 +1,96 @@
+fileFormatVersion: 2
+guid: b08b7b1d9a59694418a17835a6857e84
+timeCreated: 1458738700
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Mainkan
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Mainkan
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165
+        width: 512
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 239, y: -39.5}
+        - {x: 239, y: -21.5}
+        - {x: 233, y: -6.5}
+        - {x: 213, y: 13.5}
+        - {x: 180, y: 45.5}
+        - {x: 169, y: 54.5}
+        - {x: 131, y: 70.5}
+        - {x: 99, y: 77.5}
+        - {x: 76, y: 81.5}
+        - {x: 54, y: 84.5}
+        - {x: -44, y: 84.5}
+        - {x: -93, y: 79.5}
+        - {x: -137, y: 66.5}
+        - {x: -167, y: 52.5}
+        - {x: -192, y: 29.5}
+        - {x: -217, y: 14.5}
+        - {x: -230, y: -4.5}
+        - {x: -230, y: -30.5}
+        - {x: -227, y: -42.5}
+        - {x: -213, y: -61.5}
+        - {x: -205, y: -66.5}
+        - {x: -187, y: -82.5}
+        - {x: -168, y: -98.5}
+        - {x: -147, y: -102.5}
+        - {x: 169, y: -102.5}
+        - {x: 195, y: -90.5}
+        - {x: 234, y: -52.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
