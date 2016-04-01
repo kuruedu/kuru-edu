@@ -21,6 +21,7 @@ public class MenuController : MonoBehaviour {
 	public Button ButtonExit;
 	public Button ButtonAchievement;
 	public Button ButtonLogging;
+	public Button ButtonSinglePlay;
     public Button[] ButtonBack;
 	public Text UserName;
 
@@ -40,6 +41,7 @@ public class MenuController : MonoBehaviour {
 		ButtonExit.onClick.AddListener(delegate { pergiKePanel(5); });
 		ButtonAchievement.onClick.AddListener(delegate { pergiKePanel(6); });
 		ButtonLogging.onClick.AddListener(delegate { pergiKePanel(7); });
+		ButtonSinglePlay.onClick.AddListener(delegate { pergiKePanel(8); });
         //ButtonBack.onClick.AddListener(delegate { pergiKePanel(0); });
         for (int i = 0; i < ButtonBack.Length; i++) {
             ButtonBack[i].onClick.AddListener(delegate { pergiKePanel(0); });
@@ -108,6 +110,9 @@ public class MenuController : MonoBehaviour {
 				ButtonLogging.GetComponentInChildren<Text>().text = "Logout";
 				LoggedOut = false;
 			}
+		}
+		if (panelId == 8) {
+			Application.LoadLevel (1);
 		}
     }
 }
