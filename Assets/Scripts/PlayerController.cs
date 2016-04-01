@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("w")) {
+		if (Input.GetMouseButtonDown(0)) {
 			moveToNext ();
 		}
 		transform.position = Vector3.Lerp(transform.position, TC.Tiles [currentPos].transform.position, Time.deltaTime);
