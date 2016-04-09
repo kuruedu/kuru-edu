@@ -6,7 +6,6 @@ public class SoundController : MonoBehaviour
 {
 
     public Button ButtonMusic;
-    public GameObject audioSource;
     public bool suara = true;
 
     // Use this for initialization
