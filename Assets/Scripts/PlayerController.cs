@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 		if (!isQuiz) {
 			if (currentPos == 5 || currentPos == 10 || currentPos == 13 || currentPos == 17 || currentPos == 21) {
 				isQuiz = true;
-				QG.GenerateQuiz (Random.Range (1, 21));
+				QG.GenerateQuiz (Random.Range (1, 21)); //generate
 			} else {
 				isQuiz = false;
 			}
