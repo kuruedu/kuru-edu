@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameplayMenuController : MonoBehaviour {
-
+	
 	public GameObject pausePanel;
 	public Button pauseButton;
 	public Button ResumeButton;
@@ -27,6 +28,6 @@ public class GameplayMenuController : MonoBehaviour {
 	}
 
 	public void goToMenu(){
-		Application.LoadLevel(0);
+		SceneManager.LoadScene (0);
 	}
 }

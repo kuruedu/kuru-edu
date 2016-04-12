@@ -6,7 +6,7 @@ public class DiceController : MonoBehaviour {
 
     public int PutarDadu()
     {
-        dadu = Random.Range(1, 7);
+        dadu = Random.Range(1, 7); //generate random 
         return dadu;
     }
 }

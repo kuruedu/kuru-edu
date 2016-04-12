@@ -8,7 +8,7 @@ public class SoundController : MonoBehaviour
     public Button ButtonMusic;
     public bool suara = true;
 
-    public AudioClip[] audio;
+    public AudioClip[] soundFX;
 
     // Use this for initialization
     void Start()
@@ -21,7 +21,7 @@ public class SoundController : MonoBehaviour
         if(id == 1)
         {
 
-            GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(audio[0]); //suara jalan
+			GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(soundFX[0]); //suara jalan
         }
 
     }

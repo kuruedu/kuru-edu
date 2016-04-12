@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class MenuController : MonoBehaviour {
 
 	public GooglePlayServices_Access GPSACS;
 
-    //inisialisasi tombol
+    //inisialisasi tombol utama
     public Button ButtonPlay;
     public Button ButtonProfile;
     public Button ButtonScore;
@@ -112,7 +113,7 @@ public class MenuController : MonoBehaviour {
 			}
 		}
 		if (panelId == 8) {
-			Application.LoadLevel (1);
+			SceneManager.LoadScene (1);
 		}
     }
 }

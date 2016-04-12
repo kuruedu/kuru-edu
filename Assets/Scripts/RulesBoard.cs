@@ -8,7 +8,7 @@ public class RulesBoard : MonoBehaviour {
 	public int curZone = 0; //inisialisasi current zone menjadi 0
 	public int dice; //variable untuk menyimpan mata dadu
 	public bool turn = false; //variable boolean untuk menentukan giliran
-	public GameObject Player; //gameobject playernya
+	public GameObject Player; //gameobject player
 	public Text diceNum; // text untuk menampilkan mata dadu yg keluar
 	// Use this for initialization
 	void Start () {

@@ -6,7 +6,7 @@ using UnityEngine.SocialPlatforms;
 
 public class GooglePlayServices_Access : MonoBehaviour {
 
-	private string leaderboard = "CgkI_fbZn90HEAIQAg"; //LeaderBoardnya
+	private string leaderboard = "CgkI_fbZn90HEAIQAg"; //LeaderBoardnya dari Play Store
 
 	//Variable String yang menyimpan ID Achievement dari google play Services
 	private string achievement_selamatDatang = "CgkI_fbZn90HEAIQAQ";

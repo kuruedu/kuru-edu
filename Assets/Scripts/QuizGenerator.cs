@@ -229,6 +229,7 @@ public class QuizGenerator : MonoBehaviour {
 
 
 	// yang answer gua masih gak paham, kok berurutan ya 1234 answernya. padahal di yang lama jawabannya gak ngurut.
+	// gausah di edit bang yang ini, cukup edit method GenerateQuiz aja :D *taufiq*
 	public void Answering(int ans){
 		if (ans == 1) {
 			if (ans == correct) {
