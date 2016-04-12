@@ -34,14 +34,14 @@ public class PlayerController : MonoBehaviour {
 		if (!isQuiz) {
 			if (currentPos == 5 || currentPos == 10 || currentPos == 13 || currentPos == 17 || currentPos == 21) {
 				isQuiz = true;
-				QG.GenerateQuiz (Random.Range (1, 5));
+				QG.GenerateQuiz (Random.Range (1, 21));
 			} else {
 				isQuiz = false;
 			}
 		}
 		if (currentPos == 25) {
 			currentPos += 1;
-			QG.GenerateQuiz (Random.Range (1, 5));
+			QG.GenerateQuiz (Random.Range (1, 21));
 			isfinal = true;
 		}
 
