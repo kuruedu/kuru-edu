@@ -8,10 +8,22 @@ public class SoundController : MonoBehaviour
     public Button ButtonMusic;
     public bool suara = true;
 
+    public AudioClip[] audio;
+
     // Use this for initialization
     void Start()
     {
         ButtonMusic.onClick.AddListener(delegate { pergiKeFungsi(1); });
+    }
+
+    public void playSFX(int id)
+    {
+        if(id == 1)
+        {
+
+            GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(audio[0]); //suara jalan
+        }
+
     }
 
     // Update is called once per frame
