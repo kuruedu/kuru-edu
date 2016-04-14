@@ -238,7 +238,7 @@ public class QuizGenerator : MonoBehaviour {
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
 				} else {
-					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos += 1;
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
@@ -246,7 +246,8 @@ public class QuizGenerator : MonoBehaviour {
 			} else {
 				//salah
 				print("salah");
-				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				//GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveBackSalahJawab();
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;
@@ -259,7 +260,7 @@ public class QuizGenerator : MonoBehaviour {
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
 				} else {
-					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos += 1;
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
@@ -267,7 +268,8 @@ public class QuizGenerator : MonoBehaviour {
 			} else {
 				//salah
 				print("salah");
-				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				//GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveBackSalahJawab();
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;
@@ -280,7 +282,7 @@ public class QuizGenerator : MonoBehaviour {
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
 				} else {
-					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos += 1;
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
@@ -288,7 +290,8 @@ public class QuizGenerator : MonoBehaviour {
 			} else {
 				//salah
 				print("salah");
-				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				//GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveBackSalahJawab();
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;
@@ -301,7 +304,7 @@ public class QuizGenerator : MonoBehaviour {
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
 				} else {
-					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos += 1;
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
@@ -309,7 +312,8 @@ public class QuizGenerator : MonoBehaviour {
 			} else {
 				//salah
 				print("salah");
-				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				//GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().currentPos -= GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().getDadu;
+				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveBackSalahJawab();
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;

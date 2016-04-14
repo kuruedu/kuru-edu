@@ -5,59 +5,118 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
 	public int currentPos = 0;
+	public int idMove; //0 kiri 1 kanan
+	public int finalPos;
 	public bool isQuiz, isfinal;
 	public int getDadu;
 	public Button RollButton;
 	public Text DiceShow;
+	public float speed = 5.0f;
 
 	private TileController TC;
 	private DiceController DC;
 	private QuizGenerator QG;
+
+	private bool inMove = false;
 
 	// Use this for initialization
 	void Start () {
 		TC = GameObject.Find ("GameManager").GetComponent<TileController> ();
 		DC = GameObject.Find ("GameManager").GetComponent<DiceController> ();
 		QG = GameObject.Find ("GameManager").GetComponent<QuizGenerator> ();
-		RollButton.onClick.AddListener (moveToNext);
+		RollButton.onClick.AddListener (getDiceRoll);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*
-		if (Input.GetMouseButtonDown(0)) {
-			moveToNext ();
-		}
-		*/
-		transform.position = Vector3.Lerp(transform.position, TC.Tiles [currentPos].transform.position, Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, TC.Tiles [currentPos].transform.position, Time.deltaTime * speed);
 
-		if (!isQuiz) {
-			if (currentPos == 5 || currentPos == 10 || currentPos == 13 || currentPos == 17 || currentPos == 21) {
-				isQuiz = true;
+		QuizZoneChecker ();
+
+		print ("Current Pos : " + currentPos + " / Your Dice : " + getDadu + " / Final Pos : " + finalPos);
+
+	}
+
+	public void QuizZoneChecker(){
+		if (!inMove) {
+			if (!isQuiz) {
+				if (finalPos == 5 || finalPos == 10 || finalPos == 13 || finalPos == 17 || finalPos == 21) {
+					isQuiz = true;
+					QG.GenerateQuiz (Random.Range (1, 21));
+				} else {
+					isQuiz = false;
+				}
+			}
+			if (finalPos == 25) {
+				currentPos += 1;
 				QG.GenerateQuiz (Random.Range (1, 21));
-			} else {
-				isQuiz = false;
+				isfinal = true;
 			}
 		}
-		if (currentPos == 25) {
+	}
+
+	public void getDiceRoll(){
+		if (!inMove) {
+			getDadu = DC.PutarDadu ();
+			QG.yourScore += 1;
+			if (currentPos + 1 + getDadu < TC.Tiles.Length) {
+				//currentPos +=getDadu;
+				finalPos = currentPos + getDadu;
+				inMove = true;
+				StartCoroutine (moveStepbyStep ("right"));
+				DiceShow.text = "" + getDadu;
+				idMove = 1;
+			} else {
+				print ("Finish");
+			}
+		}
+	}
+
+	public void moveNextBenarJawab(){
+		if (!isfinal) {
 			currentPos += 1;
-			QG.GenerateQuiz (Random.Range (1, 21));
-			isfinal = true;
+			finalPos += 1;
 		}
+	}
+
+	public void moveBackSalahJawab(){
+		finalPos = currentPos - getDadu;
+		inMove = true;
+		StartCoroutine (moveStepbyStep ("left"));
+		idMove = 0;
+	}
+
+	public IEnumerator moveStepbyStep(string direction){
+		if (direction.Equals ("right")) {
+			MovePlayerRight ();
+		}
+		if (direction.Equals ("left")) {
+			MovePlayerLeft ();
+		}
+		yield return new WaitForSeconds (1);
+		checkPosition ();
 
 	}
 
-	public void moveToNext(){
-		getDadu = DC.PutarDadu ();
-		QG.yourScore += 1;
-		if (currentPos + 1 + getDadu < TC.Tiles.Length) {
-			currentPos +=getDadu;
-			//this.transform.position = TC.Tiles [currentPos].transform.position;
-			DiceShow.text = ""+getDadu;
+	public void MovePlayerRight(){
+		currentPos += 1;
+	}
+
+	public void MovePlayerLeft(){
+		currentPos -= 1;
+	}
+
+	public void checkPosition(){
+		if (currentPos != finalPos) {
+			if (idMove == 1) {
+				StartCoroutine (moveStepbyStep ("right"));
+			}
+			if (idMove == 0) {
+				StartCoroutine (moveStepbyStep ("left"));
+			}
 		} else {
-			print ("Finish");
+			inMove = false;
 		}
 	}
-
 
 }
