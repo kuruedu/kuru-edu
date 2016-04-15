@@ -14,6 +14,8 @@ public class MenuController : MonoBehaviour
     public GameObject SettingPanel;
     public GameObject CreditsPanel;
 
+	public CreditsNEw CreditScript;
+
     public GooglePlayServices_Access GPSACS;
 
     //inisialisasi tombol utama
@@ -136,6 +138,7 @@ public class MenuController : MonoBehaviour
         }
         if (panelId == 9)
         {
+			CreditScript.roll = true;
             CreditsPanel.SetActive(true);
             SettingPanel.SetActive(false);
             MenuPanel.SetActive(false);

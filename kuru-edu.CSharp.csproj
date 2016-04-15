@@ -235,7 +235,7 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
-    <Compile Include="Assets\Scripts\Credits.cs" />
+    <Compile Include="Assets\Scripts\CreditsNEw.cs" />
     <Compile Include="Assets\Scripts\DiceController.cs" />
     <Compile Include="Assets\Scripts\GameplayMenuController.cs" />
     <Compile Include="Assets\Scripts\GooglePlayServices_Access.cs" />
