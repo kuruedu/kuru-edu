@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 					isQuiz = false;
 				}
 			}
-			if (finalPos == 25) {
+			if (finalPos == 100) {
 				currentPos += 1;
 				QG.GenerateQuiz (Random.Range (1, 21));
 				isfinal = true;
