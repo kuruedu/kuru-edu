@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class CreditsNEw : MonoBehaviour {
+public class CreditsNew : MonoBehaviour {
 
     public float speed = 1.0f;
 	public int creditTime = 5;

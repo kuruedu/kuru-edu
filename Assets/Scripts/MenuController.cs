@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
     public GameObject SettingPanel;
     public GameObject CreditsPanel;
 
-	public CreditsNEw CreditScript;
+	public CreditsNew CreditScript;
 
     public GooglePlayServices_Access GPSACS;
 

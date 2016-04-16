@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
+	//public SoundController SoundScript;
 
 	public int currentPos = 0;
 	public int idMove; //0 kiri 1 kanan
@@ -100,6 +101,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void MovePlayerRight(){
 		currentPos += 1;
+		//SoundScript.playSFX (0);
 	}
 
 	public void MovePlayerLeft(){
