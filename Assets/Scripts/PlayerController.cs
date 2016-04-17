@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 	private DiceController DC;
 	private QuizGenerator QG;
 
+	private Animator theDice;
+
 	private bool inMove = false;
 
 	// Use this for initialization
@@ -26,6 +28,8 @@ public class PlayerController : MonoBehaviour {
 		DC = GameObject.Find ("GameManager").GetComponent<DiceController> ();
 		QG = GameObject.Find ("GameManager").GetComponent<QuizGenerator> ();
 		RollButton.onClick.AddListener (getDiceRoll);
+
+		theDice = GameObject.Find ("Dice").GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -56,21 +60,46 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	public bool rollAnimationDone(){
+		if ( 
+			theDice.GetCurrentAnimatorStateInfo (0).IsName ("Roll1") &&
+			theDice.GetCurrentAnimatorStateInfo (0).IsName ("Roll2") &&
+			theDice.GetCurrentAnimatorStateInfo (0).IsName ("Roll3") &&
+			theDice.GetCurrentAnimatorStateInfo (0).IsName ("Roll4") &&
+			theDice.GetCurrentAnimatorStateInfo (0).IsName ("Roll5") &&
+			theDice.GetCurrentAnimatorStateInfo (0).IsName ("Roll1")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void getDiceRoll(){
 		if (!inMove) {
 			getDadu = DC.PutarDadu ();
+			StartCoroutine(playDiceAnim());
 			QG.yourScore += 1;
 			if (currentPos + 1 + getDadu < TC.Tiles.Length) {
 				//currentPos +=getDadu;
 				finalPos = currentPos + getDadu;
 				inMove = true;
-				StartCoroutine (moveStepbyStep ("right"));
+				//StartCoroutine (moveStepbyStep ("right"));
 				DiceShow.text = "" + getDadu;
 				idMove = 1;
 			} else {
 				print ("Finish");
 			}
 		}
+	}
+
+
+
+	IEnumerator playDiceAnim(){
+		GameObject.Find ("Dice").GetComponent<Animator> ().SetInteger ("RollNum", getDadu);
+		yield return new WaitForSeconds (1.0f);
+		GameObject.Find ("Dice").GetComponent<Animator> ().SetInteger ("RollNum", 0);
+		yield return new WaitForSeconds (1.0f);
+		StartCoroutine (moveStepbyStep ("right"));
 	}
 
 	public void moveNextBenarJawab(){
@@ -95,6 +124,7 @@ public class PlayerController : MonoBehaviour {
 			MovePlayerLeft ();
 		}
 		yield return new WaitForSeconds (1);
+		GameObject.Find ("Dice").GetComponent<Animator> ().SetInteger ("RollNum", 0);
 		checkPosition ();
 
 	}
