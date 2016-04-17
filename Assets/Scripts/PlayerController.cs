@@ -45,17 +45,19 @@ public class PlayerController : MonoBehaviour {
 	public void QuizZoneChecker(){
 		if (!inMove) {
 			if (!isQuiz) {
-				if (finalPos == 5 || finalPos == 10 || finalPos == 13 || finalPos == 17 || finalPos == 21) {
+				if (finalPos == 5 || finalPos == 10 || finalPos == 13 || finalPos == 17 || finalPos == 21 || finalPos == 33 || finalPos == 44 || finalPos == 50 || finalPos == 55 || finalPos == 60 || finalPos == 70 || finalPos == 75 || finalPos == 82 || finalPos == 86 || finalPos == 90 || finalPos == 93 || finalPos == 96) {
 					isQuiz = true;
 					QG.GenerateQuiz (Random.Range (1, 21));
 				} else {
 					isQuiz = false;
 				}
 			}
-			if (finalPos == 100) {
-				currentPos += 1;
-				QG.GenerateQuiz (Random.Range (1, 21));
-				isfinal = true;
+			if (!isfinal) {
+				if (finalPos == 100) {
+					currentPos += 1;
+					QG.GenerateQuiz (Random.Range (1, 21));
+					isfinal = true;
+				}
 			}
 		}
 	}
@@ -78,20 +80,22 @@ public class PlayerController : MonoBehaviour {
 		if (!inMove) {
 			getDadu = DC.PutarDadu ();
 			StartCoroutine(playDiceAnim());
-			QG.yourScore += 1;
-			if (currentPos + 1 + getDadu < TC.Tiles.Length) {
-				//currentPos +=getDadu;
-				finalPos = currentPos + getDadu;
-				inMove = true;
-				//StartCoroutine (moveStepbyStep ("right"));
-				DiceShow.text = "" + getDadu;
-				idMove = 1;
-			} else {
-				print ("Finish");
-			}
 		}
 	}
 
+	public void DiceRollMove(){
+		if (currentPos + 1 + getDadu < TC.Tiles.Length) {
+			//currentPos +=getDadu;
+			finalPos = currentPos + getDadu;
+			inMove = true;
+			QG.yourScore += 1;
+			StartCoroutine (moveStepbyStep ("right"));
+			DiceShow.text = "" + getDadu;
+			idMove = 1;
+		} else {
+			print ("Finish");
+		}
+	}
 
 
 	IEnumerator playDiceAnim(){
@@ -99,7 +103,7 @@ public class PlayerController : MonoBehaviour {
 		yield return new WaitForSeconds (1.0f);
 		GameObject.Find ("Dice").GetComponent<Animator> ().SetInteger ("RollNum", 0);
 		yield return new WaitForSeconds (1.0f);
-		StartCoroutine (moveStepbyStep ("right"));
+		DiceRollMove ();
 	}
 
 	public void moveNextBenarJawab(){
