@@ -5,32 +5,47 @@ using UnityEngine.UI;
 public class SoundController : MonoBehaviour
 {
 
-    public Button ButtonMusic;
-	public Button ButtonSfx;
+    //private Button ButtonMusic;
+	//private Button ButtonSfx;
     public bool suara = true;
 	public bool sfx = true;
 
     public AudioClip[] soundFX;
+	public AudioClip[] soundBGM;
 	public AudioSource suarabgm;
 	public AudioSource suarasfx;
 
     // Use this for initialization
     void Start()
     {
-		suarasfx = GetComponent<AudioSource>();
-        ButtonMusic.onClick.AddListener(delegate { pergiKeFungsi(1); });
-		ButtonSfx.onClick.AddListener(delegate { pergiKeFungsi(2); });
+		GameObject.Find("References").GetComponent<References>().buttonBGM.onClick.AddListener(delegate { pergiKeFungsi(1); });
+		GameObject.Find("References").GetComponent<References>().buttonSFX.onClick.AddListener(delegate { pergiKeFungsi(2); });
+		suarabgm.PlayOneShot(soundBGM[0]);
     }
+
+	void OnLevelWasLoaded(int level){
+		if (level == 0) { //menu
+			suarabgm.Stop();
+			suarabgm.PlayOneShot(soundBGM[level]);
+			GameObject.Find("References").GetComponent<References>().buttonBGM.onClick.AddListener(delegate { pergiKeFungsi(1); });
+			GameObject.Find("References").GetComponent<References>().buttonSFX.onClick.AddListener(delegate { pergiKeFungsi(2); });
+
+		}
+		if (level == 1) { //game
+			suarabgm.Stop();
+			suarabgm.PlayOneShot(soundBGM[level]);
+		}
+	}
 
     public void playSFX(int id)
     {
-        if(id == 1)
+        if(id == 0)
         {
-			GameObject.Find("Audio Source").GetComponent<AudioSource>().PlayOneShot(soundFX[0]);		//suara jalan
+			suarasfx.PlayOneShot(soundFX[id]);		//suara jalan
         }
-		if (id == 2) 
+		if (id == 1) 
 		{
-			GameObject.Find ("Audio Source").GetComponent<AudioSource>().PlayOneShot (soundFX [1]);		//suara surprise
+			suarasfx.PlayOneShot (soundFX [id]);		//suara surprise
 		}
     }
 
@@ -42,12 +57,12 @@ public class SoundController : MonoBehaviour
             if (suara == true)
             {
 				suarabgm.volume = 0.0f;
-                ButtonMusic.GetComponentInChildren<Text>().text = "Music : Off";
+				GameObject.Find("References").GetComponent<References>().buttonBGM.GetComponentInChildren<Text>().text = "Music : Off";
                 suara = false;
             }
             else {
-				suarabgm.volume = 1.0f;
-                ButtonMusic.GetComponentInChildren<Text>().text = "Music : On";
+				suarabgm.volume = 0.5f;
+				GameObject.Find("References").GetComponent<References>().buttonBGM.GetComponentInChildren<Text>().text = "Music : On";
                 suara = true;
             }
         }
@@ -57,12 +72,12 @@ public class SoundController : MonoBehaviour
 			if (sfx == true)
 			{
 				suarasfx.volume = 0.0f;
-				ButtonSfx.GetComponentInChildren<Text>().text = "Sfx : Off";
+				GameObject.Find("References").GetComponent<References>().buttonSFX.GetComponentInChildren<Text>().text = "Sfx : Off";
 				sfx = false;
 			}
 			else {
 				suarasfx.volume = 1.0f;
-				ButtonSfx.GetComponentInChildren<Text>().text = "Sfx : On";
+				GameObject.Find("References").GetComponent<References>().buttonSFX.GetComponentInChildren<Text>().text = "Sfx : On";
 				sfx = true;
 			}
 		}

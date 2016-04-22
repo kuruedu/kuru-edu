@@ -16,14 +16,7 @@ public class GooglePlayServices_Access : MonoBehaviour {
 	//public string ProfilePic;
 
 
-	public void Awake(){ //saat program berjalan
-		DontDestroyOnLoad(this); //jangan hancurkan gameObject ini (GGPs) game object yg mengandung script ini, dengan demikian, GameObject ini mampu berpindah" dari satu scene ke scene lainnya tanpa kehilangan attribut data
 
-		if (FindObjectsOfType(GetType()).Length > 1) //mencari apabila ada duplikasi object GGPs
-		{
-			Destroy(gameObject); //bila ada, maka hancurkan / hapus Object duplikatnya
-		}
-	}
 
 	// Use this for initialization
 	void Start () { //ketika program pertamakali berjalan

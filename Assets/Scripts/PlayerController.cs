@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-	//public SoundController SoundScript;
+	private SoundController AC;
 
 	public int currentPos = 0;
 	public int idMove; //0 kiri 1 kanan
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 		TC = GameObject.Find ("GameManager").GetComponent<TileController> ();
 		DC = GameObject.Find ("GameManager").GetComponent<DiceController> ();
 		QG = GameObject.Find ("GameManager").GetComponent<QuizGenerator> ();
+		AC = GameObject.Find ("AudioManager").GetComponent<SoundController> ();
 		RollButton.onClick.AddListener (getDiceRoll);
 
 		theDice = GameObject.Find ("Dice").GetComponent<Animator> ();
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour {
 			if (!isQuiz) {
 				if (finalPos == 5 || finalPos == 10 || finalPos == 13 || finalPos == 17 || finalPos == 21 || finalPos == 33 || finalPos == 44 || finalPos == 50 || finalPos == 55 || finalPos == 60 || finalPos == 70 || finalPos == 75 || finalPos == 82 || finalPos == 86 || finalPos == 90 || finalPos == 93 || finalPos == 96) {
 					isQuiz = true;
+					AC.playSFX (1);
 					QG.GenerateQuiz (Random.Range (1, 81));
 				} else {
 					isQuiz = false;
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour {
 			if (!isfinal) {
 				if (finalPos == 100) {
 					currentPos += 1;
+					AC.playSFX (1);
 					QG.GenerateQuiz (Random.Range (1, 81));
 					isfinal = true;
 				}
@@ -135,11 +138,12 @@ public class PlayerController : MonoBehaviour {
 
 	public void MovePlayerRight(){
 		currentPos += 1;
-		//SoundScript.playSFX (0);
+		AC.playSFX (0);
 	}
 
 	public void MovePlayerLeft(){
 		currentPos -= 1;
+		AC.playSFX (0);
 	}
 
 	public void checkPosition(){
