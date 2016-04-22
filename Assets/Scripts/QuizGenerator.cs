@@ -581,7 +581,7 @@ public class QuizGenerator : MonoBehaviour {
 			pilC.GetComponentInChildren<Text>().text = "harimau";
 			pilD.GetComponentInChildren<Text>().text = "gajah ";
 
-			correct = d;
+			correct = 4;
 		}
 
 		//Soal IPS
