@@ -20,20 +20,25 @@ public class SoundController : MonoBehaviour
     {
 		GameObject.Find("References").GetComponent<References>().buttonBGM.onClick.AddListener(delegate { pergiKeFungsi(1); });
 		GameObject.Find("References").GetComponent<References>().buttonSFX.onClick.AddListener(delegate { pergiKeFungsi(2); });
-		suarabgm.PlayOneShot(soundBGM[0]);
+		//suarabgm.PlayOneShot(soundBGM[0]);
+		suarabgm.clip = soundBGM [0];
+		suarabgm.Play ();
     }
 
 	void OnLevelWasLoaded(int level){
 		if (level == 0) { //menu
 			suarabgm.Stop();
-			suarabgm.PlayOneShot(soundBGM[level]);
+			suarabgm.clip = soundBGM [level];
+			suarabgm.Play ();
+
 			GameObject.Find("References").GetComponent<References>().buttonBGM.onClick.AddListener(delegate { pergiKeFungsi(1); });
 			GameObject.Find("References").GetComponent<References>().buttonSFX.onClick.AddListener(delegate { pergiKeFungsi(2); });
 
 		}
 		if (level == 1) { //game
 			suarabgm.Stop();
-			suarabgm.PlayOneShot(soundBGM[level]);
+			suarabgm.clip = soundBGM [level];
+			suarabgm.Play ();
 		}
 	}
 
