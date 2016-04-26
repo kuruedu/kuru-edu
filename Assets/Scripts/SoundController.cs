@@ -46,11 +46,23 @@ public class SoundController : MonoBehaviour
     {
         if(id == 0)
         {
-			suarasfx.PlayOneShot(soundFX[id]);		//suara jalan
+			suarasfx.PlayOneShot(soundFX[id]);		//suara buttons
         }
 		if (id == 1) 
 		{
 			suarasfx.PlayOneShot (soundFX [id]);		//suara surprise
+		}
+		if (id == 2) 
+		{
+			suarasfx.PlayOneShot (soundFX [id]);		//suara footstep
+		}
+		if (id == 3) 
+		{
+			suarasfx.PlayOneShot (soundFX [id]);		//suara rolling dice
+		}
+		if (id == 4) 
+		{
+			suarasfx.PlayOneShot (soundFX [id]);		//suara winquiz
 		}
     }
 

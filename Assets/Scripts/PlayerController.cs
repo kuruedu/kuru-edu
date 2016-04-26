@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour {
 	public void getDiceRoll(){
 		if (!inMove) {
 			getDadu = DC.PutarDadu ();
+			AC.playSFX (3);
 			StartCoroutine(playDiceAnim());
 		}
 	}
@@ -111,6 +112,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void moveNextBenarJawab(){
 		if (!isfinal) {
+			AC.playSFX (4);
 			currentPos += 1;
 			finalPos += 1;
 		}
@@ -138,12 +140,12 @@ public class PlayerController : MonoBehaviour {
 
 	public void MovePlayerRight(){
 		currentPos += 1;
-		AC.playSFX (0);
+		AC.playSFX (2);
 	}
 
 	public void MovePlayerLeft(){
 		currentPos -= 1;
-		AC.playSFX (0);
+		AC.playSFX (2);
 	}
 
 	public void checkPosition(){
