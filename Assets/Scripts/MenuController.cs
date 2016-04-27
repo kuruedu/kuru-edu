@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+	public SoundController SC;
 
     //inisialisasi panel
     public GameObject MenuPanel;
@@ -32,7 +33,7 @@ public class MenuController : MonoBehaviour
     public Text UserName;
 
     private bool LoggedOut = false;
-    // Use this for initialization
+    // Use this for initialization+
     void Start()
     {
         MenuPanel.SetActive(true);
@@ -40,6 +41,7 @@ public class MenuController : MonoBehaviour
         ProfilePanel.SetActive(false);
         ScorePanel.SetActive(false);
         SettingPanel.SetActive(false);
+		SC = GameObject.Find ("AudioManager").GetComponent<SoundController> ();
 
         ButtonPlay.onClick.AddListener(delegate { pergiKePanel(1); });
         ButtonProfile.onClick.AddListener(delegate { pergiKePanel(2); });
@@ -60,6 +62,7 @@ public class MenuController : MonoBehaviour
 
     public void pergiKePanel(int panelId)
     {
+		SC.playSFX (0);
         if (panelId == 0)
         {
             MenuPanel.SetActive(true);
