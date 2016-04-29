@@ -230,6 +230,7 @@
      <Compile Include="Assets\Scripts\RulesBoard.cs" />
      <Compile Include="Assets\Scripts\ScoreController.cs" />
      <Compile Include="Assets\Scripts\SoundController.cs" />
+     <Compile Include="Assets\Scripts\TeleportController.cs" />
      <Compile Include="Assets\Scripts\TileController.cs" />
      <None Include="Assets\GooglePlayGames\Editor\Podfile.txt" />
      <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />

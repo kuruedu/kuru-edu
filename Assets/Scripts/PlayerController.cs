@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public int currentPos = 0;
 	public int idMove; //0 kiri 1 kanan
 	public int finalPos;
-	public bool isQuiz, isfinal;
+	public bool isQuiz, isfinal, isTeleport;
 	public int getDadu;
 	public Button RollButton;
 	public Text DiceShow;
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	private TileController TC;
 	private DiceController DC;
 	private QuizGenerator QG;
+	private TeleportController Tele;
 
 	private Animator theDice;
 
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour {
 		DC = GameObject.Find ("GameManager").GetComponent<DiceController> ();
 		QG = GameObject.Find ("GameManager").GetComponent<QuizGenerator> ();
 		AC = GameObject.Find ("AudioManager").GetComponent<SoundController> ();
+		Tele = GameObject.Find ("GameManager").GetComponent<TeleportController> ();
 		RollButton.onClick.AddListener (getDiceRoll);
 
 		theDice = GameObject.Find ("Dice").GetComponent<Animator> ();
@@ -62,6 +64,13 @@ public class PlayerController : MonoBehaviour {
 					isfinal = true;
 				}
 			}
+			if (!isTeleport) {
+				if (finalPos == 18 || finalPos == 26 || finalPos == 42 || finalPos == 68 || finalPos == 79 || finalPos == 98) {
+					Tele.openTeleportMenu ();
+					isTeleport = true;
+				}
+			}
+
 		}
 	}
 
