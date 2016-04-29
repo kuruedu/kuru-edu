@@ -10,9 +10,14 @@ public class GooglePlayServices_Access : MonoBehaviour {
 
 	//Variable String yang menyimpan ID Achievement dari google play Services
 	private string achievement_selamatDatang = "CgkI_fbZn90HEAIQAQ";
+	private string achievement_menjawabBenar = "CgkI_fbZn90HEAIQBA";
+	private string achievement_menjawabSalah = "CgkI_fbZn90HEAIQBQ";
+	private string achievement_menang = "CgkI_fbZn90HEAIQBg";
+	private string achievement_hilangkanAngka = "CgkI_fbZn90HEAIQBw";
 
 	public string UserName;
 	public string UserID;
+	public Texture2D UserPic;
 	//public string ProfilePic;
 
 
@@ -27,6 +32,7 @@ public class GooglePlayServices_Access : MonoBehaviour {
 	public void getPlayerDetail(){
 		UserName  = Social.localUser.userName; // UserName
 		UserID      = Social.localUser.id; // UserID
+		UserPic = Social.localUser.image;
 		//ProfPic.GetComponent<Image>().sprite    =Social.localUser.image; // ProfilePic
 	}
 
@@ -63,6 +69,58 @@ public class GooglePlayServices_Access : MonoBehaviour {
 						Debug.Log("Fail");
 					}
 				});
+			}
+			if (id == 2) { 
+				Social.ReportProgress(achievement_menjawabBenar, 100.0f, (bool success) => //unlock achievement selamat belajar sebanyak 100%
+					{
+						if (success)
+						{
+							Debug.Log("Added");
+						}
+						else
+						{
+							Debug.Log("Fail");
+						}
+					});
+			}
+			if (id == 3) { 
+				Social.ReportProgress(achievement_menjawabSalah, 100.0f, (bool success) => //unlock achievement selamat belajar sebanyak 100%
+					{
+						if (success)
+						{
+							Debug.Log("Added");
+						}
+						else
+						{
+							Debug.Log("Fail");
+						}
+					});
+			}
+			if (id == 4) { 
+				Social.ReportProgress(achievement_hilangkanAngka, 100.0f, (bool success) => //unlock achievement selamat belajar sebanyak 100%
+					{
+						if (success)
+						{
+							Debug.Log("Added");
+						}
+						else
+						{
+							Debug.Log("Fail");
+						}
+					});
+			}
+			if (id == 5) { 
+				Social.ReportProgress(achievement_menang, 100.0f, (bool success) => //unlock achievement selamat belajar sebanyak 100%
+					{
+						if (success)
+						{
+							Debug.Log("Added");
+						}
+						else
+						{
+							Debug.Log("Fail");
+						}
+					});
 			}
 		}
 	}

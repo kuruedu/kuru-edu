@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour {
 			finalPos = currentPos + getDadu;
 			inMove = true;
 			QG.yourScore += 1;
+			GameObject.FindObjectOfType<ScoreController> ().addScore (1);
 			StartCoroutine (moveStepbyStep ("right"));
 			DiceShow.text = "" + getDadu;
 			idMove = 1;

@@ -775,12 +775,16 @@ public class QuizGenerator : MonoBehaviour {
 				print("benar");
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
+					GameObject.FindObjectOfType<ScoreController> ().winStatus (1);
+					GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (5);
 				} else {
 					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore += 10;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (10);
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (2);
 			} else {
 				//salah
 				print("salah");
@@ -789,6 +793,12 @@ public class QuizGenerator : MonoBehaviour {
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (-5);
+				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal = false;
+				}
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (3);
+
 			}
 		}
 		if (ans == 2) {
@@ -797,12 +807,16 @@ public class QuizGenerator : MonoBehaviour {
 				print("benar");
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
+					GameObject.FindObjectOfType<ScoreController> ().winStatus (1);
+					GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (5);
 				} else {
 					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore += 10;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (10);
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (2);
 			} else {
 				//salah
 				print("salah");
@@ -811,6 +825,12 @@ public class QuizGenerator : MonoBehaviour {
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (-5);
+				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal = false;
+				}
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (3);
+
 			}
 		}
 		if (ans == 3) {
@@ -819,12 +839,16 @@ public class QuizGenerator : MonoBehaviour {
 				print("benar");
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
+					GameObject.FindObjectOfType<ScoreController> ().winStatus (1);
+					GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (5);
 				} else {
 					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore += 10;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (10);
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (2);
 			} else {
 				//salah
 				print("salah");
@@ -833,6 +857,12 @@ public class QuizGenerator : MonoBehaviour {
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (-5);
+				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal = false;
+				}
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (3);
+
 			}
 		}
 		if (ans == 4) {
@@ -841,12 +871,16 @@ public class QuizGenerator : MonoBehaviour {
 				print("benar");
 				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
 					YouWin.SetActive (true);
+					GameObject.FindObjectOfType<ScoreController> ().winStatus (1);
+					GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (5);
 				} else {
 					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().moveNextBenarJawab ();
 				}
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore += 10;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (10);
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (2);
 			} else {
 				//salah
 				print("salah");
@@ -855,6 +889,12 @@ public class QuizGenerator : MonoBehaviour {
 				GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isQuiz = false;
 				QuizTime.SetActive (false);
 				yourScore -= 5;
+				GameObject.FindObjectOfType<ScoreController> ().addScore (-5);
+				if (GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal) {
+					GameObject.Find ("PlayerPrototype").GetComponent<PlayerController> ().isfinal = false;
+				}
+				GameObject.FindObjectOfType<GooglePlayServices_Access> ().UnlockAchievement (3);
+
 			}
 		}
 	}

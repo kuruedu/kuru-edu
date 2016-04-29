@@ -16,6 +16,9 @@ public class MenuController : MonoBehaviour
     public GameObject CreditsPanel;
 
 	public CreditsNew CreditScript;
+	public RawImage ProfPic;
+
+	public int myScore;
 
     public GooglePlayServices_Access GPSACS;
 
@@ -31,6 +34,8 @@ public class MenuController : MonoBehaviour
     public Button ButtonSinglePlay;
     public Button[] ButtonBack;
     public Text UserName;
+	public Text UserID;
+	public Text theScore;
 
     private bool LoggedOut = false;
     // Use this for initialization+
@@ -42,6 +47,8 @@ public class MenuController : MonoBehaviour
         ScorePanel.SetActive(false);
         SettingPanel.SetActive(false);
 		SC = GameObject.Find ("AudioManager").GetComponent<SoundController> ();
+
+		myScore =  PlayerPrefs.GetInt ("score");
 
         ButtonPlay.onClick.AddListener(delegate { pergiKePanel(1); });
         ButtonProfile.onClick.AddListener(delegate { pergiKePanel(2); });
@@ -89,6 +96,9 @@ public class MenuController : MonoBehaviour
             ScorePanel.SetActive(false);
             SettingPanel.SetActive(false);
             UserName.text = GPSACS.UserName;
+			UserID.text = GPSACS.UserID;
+			ProfPic.texture = GPSACS.UserPic;
+			theScore.text = "HighScore " + myScore;
             CreditsPanel.SetActive(false);
         }
         if (panelId == 3)
@@ -100,6 +110,8 @@ public class MenuController : MonoBehaviour
             ProfilePanel.SetActive(false);
             SettingPanel.SetActive(false);
             */
+			int intBestScore = PlayerPrefs.GetInt ("score");
+			GameObject.FindObjectOfType<GooglePlayServices_Access> ().tambahScore (intBestScore);
             GPSACS.bukaLeaderBoard();
         }
         if (panelId == 4)

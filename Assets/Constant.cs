@@ -24,8 +24,12 @@
 
 public static class Constant
 {
-        public const string leaderboard_pemain_terbaik = "CgkI_fbZn90HEAIQAg"; // <GPGSID>
+        public const string achievement_berhasil_menjawab_pertanyaan_ = "CgkI_fbZn90HEAIQBA"; // <GPGSID>
+        public const string achievement_menang_game_pertama_kali_ = "CgkI_fbZn90HEAIQBg"; // <GPGSID>
+        public const string achievement_oh_tidak__mundur = "CgkI_fbZn90HEAIQBQ"; // <GPGSID>
         public const string achievement_selamat_datang = "CgkI_fbZn90HEAIQAQ"; // <GPGSID>
+        public const string achievement_hilangkan_angka = "CgkI_fbZn90HEAIQBw"; // <GPGSID>
+        public const string leaderboard_pemain_terbaik = "CgkI_fbZn90HEAIQAg"; // <GPGSID>
 
 }
 
