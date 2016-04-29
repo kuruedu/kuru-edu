@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			if (!isTeleport) {
 				if (finalPos == 18 || finalPos == 26 || finalPos == 42 || finalPos == 68 || finalPos == 79 || finalPos == 98) {
+					AC.playSFX (1);
 					Tele.openTeleportMenu ();
 					isTeleport = true;
 				}
@@ -129,6 +130,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void moveBackSalahJawab(){
+		AC.playSFX (5);
 		finalPos = currentPos - getDadu;
 		inMove = true;
 		StartCoroutine (moveStepbyStep ("left"));

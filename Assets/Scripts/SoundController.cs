@@ -64,6 +64,10 @@ public class SoundController : MonoBehaviour
 		{
 			suarasfx.PlayOneShot (soundFX [id]);		//suara winquiz
 		}
+		if (id == 5) 
+		{
+			suarasfx.PlayOneShot (soundFX [id]);		//suara winquiz
+		}
     }
 
     // Update is called once per frame
