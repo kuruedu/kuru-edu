@@ -30,9 +30,10 @@ public class GooglePlayServices_Access : MonoBehaviour {
 	}
 
 	public void getPlayerDetail(){
-		UserName  = Social.localUser.userName; // UserName
-		UserID      = Social.localUser.id; // UserID
+		UserName = Social.localUser.userName; // UserName
+		UserID = Social.localUser.id; // UserID
 		UserPic = Social.localUser.image;
+		PlayerPrefs.SetString("name",UserName);
 		//ProfPic.GetComponent<Image>().sprite    =Social.localUser.image; // ProfilePic
 	}
 
@@ -140,6 +141,7 @@ public class GooglePlayServices_Access : MonoBehaviour {
 	//method signout
 	public void signOut(){
 		((PlayGamesPlatform)Social.Active).SignOut(); //melakukan proses signout dari account Google yang sedang aktif
+		PlayerPrefs.SetString("name","");
 	}
 
 	public void Login(){

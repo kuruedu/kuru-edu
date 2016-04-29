@@ -95,9 +95,14 @@ public class MenuController : MonoBehaviour
             PlayPanel.SetActive(false);
             ScorePanel.SetActive(false);
             SettingPanel.SetActive(false);
-            UserName.text = GPSACS.UserName;
-			UserID.text = GPSACS.UserID;
-			ProfPic.texture = GPSACS.UserPic;
+			/*
+			if (UserID.text.Equals (null)) {
+				UserName.text = GPSACS.UserName;
+				UserID.text = GPSACS.UserID;
+				//ProfPic.texture = GPSACS.UserPic;
+			}
+			*/
+			UserName.text = PlayerPrefs.GetString ("name");
 			theScore.text = "HighScore " + myScore;
             CreditsPanel.SetActive(false);
         }
