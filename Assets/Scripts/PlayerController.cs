@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 	public void QuizZoneChecker(){
 		if (!inMove) {
 			if (!isQuiz) {
-				if (finalPos == 5 || finalPos == 10 || finalPos == 13 || finalPos == 17 || finalPos == 21 || finalPos == 33 || finalPos == 44 || finalPos == 50 || finalPos == 55 || finalPos == 60 || finalPos == 70 || finalPos == 75 || finalPos == 82 || finalPos == 86 || finalPos == 90 || finalPos == 93 || finalPos == 96) {
+				if (finalPos == TC.QuizZoneNum[0] || finalPos == TC.QuizZoneNum[1] || finalPos == TC.QuizZoneNum[2] || finalPos == TC.QuizZoneNum[3] || finalPos == TC.QuizZoneNum[4] || finalPos == TC.QuizZoneNum[5] || finalPos == TC.QuizZoneNum[6] || finalPos == TC.QuizZoneNum[7] || finalPos == TC.QuizZoneNum[8] || finalPos == TC.QuizZoneNum[9] ) {
 					isQuiz = true;
 					AC.playSFX (1);
 					QG.GenerateQuiz (Random.Range (1, 81));
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 			if (!isTeleport) {
-				if (finalPos == 18 || finalPos == 26 || finalPos == 42 || finalPos == 68 || finalPos == 79 || finalPos == 98) {
+				if (finalPos == TC.TeleZoneNum [0] || finalPos == TC.TeleZoneNum [1] || finalPos == TC.TeleZoneNum [2] || finalPos == TC.TeleZoneNum [3] || finalPos == TC.TeleZoneNum [4]) {
 					AC.playSFX (1);
 					Tele.openTeleportMenu ();
 					isTeleport = true;
