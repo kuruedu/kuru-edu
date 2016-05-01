@@ -69,6 +69,7 @@ public class MenuController : MonoBehaviour
 
     public void pergiKePanel(int panelId)
     {
+		GameObject.FindObjectOfType<AdMobController> ().tampilkanBanner ();
 		SC.playSFX (0);
         if (panelId == 0)
         {
@@ -103,7 +104,7 @@ public class MenuController : MonoBehaviour
 			}
 			*/
 			UserName.text = PlayerPrefs.GetString ("name");
-			theScore.text = "HighScore " + myScore;
+			theScore.text = "HighScore " + myScore + "\n Menang : " + PlayerPrefs.GetInt("win") + " / Kalah :" + PlayerPrefs.GetInt("lose");
             CreditsPanel.SetActive(false);
         }
         if (panelId == 3)
