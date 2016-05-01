@@ -250,6 +250,8 @@
      <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
      <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
      <Compile Include="Assets\Scripts\AdMobController.cs" />
+     <Compile Include="Assets\Scripts\BotController.cs" />
+     <Compile Include="Assets\Scripts\CamController.cs" />
      <Compile Include="Assets\Scripts\CreditsNew.cs" />
      <Compile Include="Assets\Scripts\DiceController.cs" />
      <Compile Include="Assets\Scripts\GameplayMenuController.cs" />

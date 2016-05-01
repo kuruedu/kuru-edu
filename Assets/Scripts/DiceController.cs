@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DiceController : MonoBehaviour {
 	public int dadu;
+	public GameObject daduOBJ;
 
     public int PutarDadu()
     {

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour {
 
 	public int intScore;
 	public int intBestScore;
+	public Text winInfo; 
 
 	//GooglePlayServices_Access gps;
 
@@ -22,12 +24,14 @@ public class ScoreController : MonoBehaviour {
 	public void winStatus(int id){
 		if(id == 1){
 			//menang
+			winInfo.text = "Kamu Menang !";
 			int addwin = PlayerPrefs.GetInt("win") + 1;
 			PlayerPrefs.SetInt("win",addwin);
 			StartCoroutine (loadMainMenu ());
 		}
 		if(id == 2){
 			//kalah
+			winInfo.text = "Kamu Kalah!";
 			int addlose = PlayerPrefs.GetInt("lose") + 1;
 			PlayerPrefs.SetInt("lose",addlose);
 			StartCoroutine (loadMainMenu ());

@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour {
 	public Button RollButton;
 	public Text DiceShow;
 	public float speed = 5.0f;
+	public bool inTurn = false;
+
+	public GameObject ButtonMaju;
 
 	private TileController TC;
 	private DiceController DC;
@@ -21,10 +24,11 @@ public class PlayerController : MonoBehaviour {
 
 	private Animator theDice;
 
-	private bool inMove = false;
+	public bool inMove = false;
 
 	// Use this for initialization
 	void Start () {
+		ButtonMaju.SetActive (true);
 		TC = GameObject.Find ("GameManager").GetComponent<TileController> ();
 		DC = GameObject.Find ("GameManager").GetComponent<DiceController> ();
 		QG = GameObject.Find ("GameManager").GetComponent<QuizGenerator> ();
@@ -94,6 +98,7 @@ public class PlayerController : MonoBehaviour {
 			getDadu = DC.PutarDadu ();
 			AC.playSFX (3);
 			StartCoroutine(playDiceAnim());
+			ButtonMaju.SetActive (false);
 		}
 	}
 
@@ -102,13 +107,18 @@ public class PlayerController : MonoBehaviour {
 			//currentPos +=getDadu;
 			finalPos = currentPos + getDadu;
 			inMove = true;
+			inTurn = true;
 			QG.yourScore += 1;
 			GameObject.FindObjectOfType<ScoreController> ().addScore (1);
 			StartCoroutine (moveStepbyStep ("right"));
 			DiceShow.text = "" + getDadu;
 			idMove = 1;
 		} else {
+			inMove = false;
+			inTurn = false;
+			StartCoroutine (MoveBot ());
 			print ("Finish");
+			AC.playSFX (5);
 		}
 	}
 
@@ -133,6 +143,7 @@ public class PlayerController : MonoBehaviour {
 		AC.playSFX (5);
 		finalPos = currentPos - getDadu;
 		inMove = true;
+		inTurn = true;
 		StartCoroutine (moveStepbyStep ("left"));
 		idMove = 0;
 	}
@@ -145,7 +156,8 @@ public class PlayerController : MonoBehaviour {
 			MovePlayerLeft ();
 		}
 		yield return new WaitForSeconds (1);
-		GameObject.Find ("Dice").GetComponent<Animator> ().SetInteger ("RollNum", 0);
+		//GameObject.Find ("Dice").GetComponent<Animator> ().SetInteger ("RollNum", 0);
+		GameObject.FindObjectOfType<DiceController>().daduOBJ.GetComponent<Animator>().SetInteger ("RollNum", 0);
 		checkPosition ();
 
 	}
@@ -153,11 +165,13 @@ public class PlayerController : MonoBehaviour {
 	public void MovePlayerRight(){
 		currentPos += 1;
 		AC.playSFX (2);
+		inTurn = true;
 	}
 
 	public void MovePlayerLeft(){
 		currentPos -= 1;
 		AC.playSFX (2);
+		inTurn = true;
 	}
 
 	public void checkPosition(){
@@ -170,7 +184,15 @@ public class PlayerController : MonoBehaviour {
 			}
 		} else {
 			inMove = false;
+			inTurn = false;
+			StartCoroutine (MoveBot ());
 		}
+	}
+
+	IEnumerator MoveBot(){
+		ButtonMaju.SetActive (false);
+		yield return new WaitForSeconds (2);
+		GameObject.FindObjectOfType<BotController> ().moveBotNext ();
 	}
 
 }
