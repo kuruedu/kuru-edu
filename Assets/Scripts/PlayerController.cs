@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
 	private TeleportController Tele;
 
 	private Animator theDice;
+	public Animator PlayerAnim;
+	public SpriteRenderer PlayerSprite;
 
 	public bool inMove = false;
 
@@ -42,12 +44,44 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = Vector3.Lerp(transform.position, TC.Tiles [currentPos].transform.position, Time.deltaTime * speed);
-
 		QuizZoneChecker ();
-
 		print ("Current Pos : " + currentPos + " / Your Dice : " + getDadu + " / Final Pos : " + finalPos);
-
+		flipPlayerAtPos ();
 	}
+
+	void flipPlayerAtPos(){
+		if (currentPos >= 0 && currentPos <= 10) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 11 && currentPos <= 20) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 21 && currentPos <= 30) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 31 && currentPos <= 40) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 41 && currentPos <= 50) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 51 && currentPos <= 60) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 61 && currentPos <= 70) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 71 && currentPos <= 80) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 81 && currentPos <= 90) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 91 && currentPos <= 100) {
+			PlayerSprite.flipX = true;
+		}
+	}
+
 
 	public void QuizZoneChecker(){
 		if (!inMove) {
@@ -155,6 +189,8 @@ public class PlayerController : MonoBehaviour {
 		if (direction.Equals ("left")) {
 			MovePlayerLeft ();
 		}
+		PlayerAnim.SetTrigger ("Move");
+		//this.GetComponent<Animator> ().SetTrigger ("Move");
 		yield return new WaitForSeconds (1);
 		//GameObject.Find ("Dice").GetComponent<Animator> ().SetInteger ("RollNum", 0);
 		GameObject.FindObjectOfType<DiceController>().daduOBJ.GetComponent<Animator>().SetInteger ("RollNum", 0);

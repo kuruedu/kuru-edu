@@ -12,6 +12,8 @@ public class BotController : MonoBehaviour {
 	private bool playerHasMoveTrig = false;
 	private SoundController AC;
 
+	public Animator BotAnimator;
+	public SpriteRenderer PlayerSprite;
 	// Use this for initialization
 	void Start () {
 		TC = GameObject.Find ("GameManager").GetComponent<TileController> ();
@@ -37,12 +39,48 @@ public class BotController : MonoBehaviour {
 			}
 		}
 		*/
+
+		flipPlayerAtPos ();
+
 		if (currentPos == 100) {
 			if (!isfinal) {
 				GameObject.FindObjectOfType<QuizGenerator> ().YouWin.SetActive (true);
 				GameObject.FindObjectOfType<ScoreController> ().winStatus (2);
 				isfinal = true;
 			}
+		}
+	}
+
+	void flipPlayerAtPos(){
+		if (currentPos >= 0 && currentPos <= 10) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 11 && currentPos <= 20) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 21 && currentPos <= 30) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 31 && currentPos <= 40) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 41 && currentPos <= 50) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 51 && currentPos <= 60) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 61 && currentPos <= 70) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 71 && currentPos <= 80) {
+			PlayerSprite.flipX = true;
+		}
+		if (currentPos >= 81 && currentPos <= 90) {
+			PlayerSprite.flipX = false;
+		}
+		if (currentPos >= 91 && currentPos <= 100) {
+			PlayerSprite.flipX = true;
 		}
 	}
 
@@ -60,6 +98,7 @@ public class BotController : MonoBehaviour {
 	public IEnumerator moveStepbyStep(){
 		currentPos += 1;
 		AC.playSFX (2);
+		BotAnimator.SetTrigger ("Move");
 		yield return new WaitForSeconds (1);
 		checkPosition ();
 	}

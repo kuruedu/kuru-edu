@@ -1,0 +1,302 @@
+fileFormatVersion: 2
+guid: 0ec707bc49e7cd84f8ea037ec11be8a2
+timeCreated: 1463041704
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FemaleChara_0
+    21300002: FemaleChara_1
+    21300004: FemaleChara_2
+    21300006: FemaleChara_3
+    21300008: FemaleChara_4
+    21300010: FemaleChara_5
+    21300012: FemaleChara_6
+    21300014: FemaleChara_7
+    21300016: FemaleChara_8
+    21300018: FemaleChara_9
+    21300020: FemaleChara_10
+    21300022: FemaleChara_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FemaleChara_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 359
+        width: 74
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 111}
+        - {x: -37, y: 4}
+        - {x: -36, y: 0}
+        - {x: 28, y: 0}
+        - {x: 37, y: 31}
+        - {x: 37, y: 111}
+    - name: FemaleChara_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 360
+        width: 74
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 111}
+        - {x: -37, y: 92}
+        - {x: -37, y: 42}
+        - {x: -22, y: 0}
+        - {x: 30, y: 0}
+        - {x: 37, y: 24}
+        - {x: 37, y: 108}
+        - {x: 28, y: 111}
+    - name: FemaleChara_2
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 360
+        width: 73
+        height: 110
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.5, y: 8}
+        - {x: 36.5, y: 109}
+        - {x: 32.5, y: 110}
+        - {x: -24.5, y: 110}
+        - {x: -32.5, y: 95}
+        - {x: -36.5, y: 78}
+        - {x: -36.5, y: 38}
+        - {x: -24.5, y: 0}
+        - {x: -1.5, y: 0}
+        - {x: -1.5, y: 6}
+        - {x: 4.5, y: 0}
+        - {x: 33.5, y: 0}
+    - name: FemaleChara_3
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 360
+        width: 74
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 111}
+        - {x: -28, y: 111}
+        - {x: -37, y: 102}
+        - {x: -37, y: 9}
+        - {x: -25, y: 0}
+        - {x: 31, y: 0}
+        - {x: 37, y: 28}
+        - {x: 37, y: 108}
+    - name: FemaleChara_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 207
+        width: 75
+        height: 109
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 109}
+        - {x: -37.5, y: 94}
+        - {x: -37.5, y: 1}
+        - {x: -34.5, y: 0}
+        - {x: 10.5, y: 0}
+        - {x: 24.5, y: 9}
+        - {x: 37.5, y: 48}
+        - {x: 37.5, y: 109}
+    - name: FemaleChara_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 207
+        width: 76
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 111}
+        - {x: -38, y: 89}
+        - {x: -38, y: 54}
+        - {x: -29, y: 50}
+        - {x: -26, y: 51}
+        - {x: -26, y: 48}
+        - {x: -35, y: 30}
+        - {x: -38, y: 20}
+        - {x: -38, y: 3}
+        - {x: -35, y: 0}
+        - {x: -1, y: 0}
+        - {x: 38, y: 32}
+        - {x: 38, y: 103}
+        - {x: 36, y: 111}
+    - name: FemaleChara_6
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 207
+        width: 79
+        height: 110
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 110}
+        - {x: -33.5, y: 103}
+        - {x: -39.5, y: 72}
+        - {x: -39.5, y: 2}
+        - {x: -33.5, y: 0}
+        - {x: 27.5, y: 0}
+        - {x: 39.5, y: 21}
+        - {x: 39.5, y: 101}
+        - {x: 23.5, y: 110}
+    - name: FemaleChara_7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 206
+        width: 76
+        height: 110
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 110}
+        - {x: -38, y: 0}
+        - {x: 10, y: 0}
+        - {x: 38, y: 42}
+        - {x: 38, y: 110}
+    - name: FemaleChara_8
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 207
+        width: 76
+        height: 111
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 111}
+        - {x: -36, y: 94}
+        - {x: -38, y: 81}
+        - {x: -38, y: 5}
+        - {x: -27, y: 0}
+        - {x: -1, y: 0}
+        - {x: 38, y: 40}
+        - {x: 38, y: 103}
+        - {x: 36, y: 111}
+    - name: FemaleChara_9
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 207
+        width: 75
+        height: 110
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 110}
+        - {x: -37.5, y: 85}
+        - {x: -37.5, y: 6}
+        - {x: -25.5, y: 0}
+        - {x: 4.5, y: 0}
+        - {x: 37.5, y: 52}
+        - {x: 37.5, y: 108}
+        - {x: 31.5, y: 110}
+    - name: FemaleChara_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 73
+        height: 116
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.5, y: 116}
+        - {x: -36.5, y: 0}
+        - {x: 15.5, y: 0}
+        - {x: 36.5, y: 58}
+        - {x: 36.5, y: 116}
+    - name: FemaleChara_11
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 64
+        width: 85
+        height: 117
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 117}
+        - {x: -20.5, y: 116}
+        - {x: -42.5, y: 90}
+        - {x: -42.5, y: 30}
+        - {x: -22.5, y: 0}
+        - {x: 20.5, y: 0}
+        - {x: 42.5, y: 40}
+        - {x: 42.5, y: 111}
+        - {x: 29.5, y: 117}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
