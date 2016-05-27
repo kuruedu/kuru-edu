@@ -1,15 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuController.cs">
     <Files>
-      <File FileName="Assets\Scripts\SoundController.cs" Line="67" Column="14" />
-      <File FileName="Assets\Scripts\MenuController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MenuController.cs" Line="114" Column="43" />
+      <File FileName="Assets\Scripts\SoundController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CreditsNew.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerController.cs" Line="69" Column="21" />
       <File FileName="Assets\Scripts\GooglePlayServices_Access.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ImortalOBJ.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\References.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameplayMenuController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ChangeProfilePicture.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

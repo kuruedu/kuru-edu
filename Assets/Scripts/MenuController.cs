@@ -33,9 +33,12 @@ public class MenuController : MonoBehaviour
     public Button ButtonLogging;
     public Button ButtonSinglePlay;
     public Button[] ButtonBack;
+	public Button ButtonChangeRight;
+	public Button ButtonChangeLeft;
     public Text UserName;
 	public Text UserID;
 	public Text theScore;
+	public Image gambar;
 
     private bool LoggedOut = false;
     // Use this for initialization+
@@ -47,6 +50,7 @@ public class MenuController : MonoBehaviour
         ScorePanel.SetActive(false);
         SettingPanel.SetActive(false);
 		SC = GameObject.Find ("AudioManager").GetComponent<SoundController> ();
+		gambar.sprite = Resources.Load<Sprite> ("Images/profile") as Sprite;
 
 		myScore =  PlayerPrefs.GetInt ("score");
 
@@ -59,6 +63,8 @@ public class MenuController : MonoBehaviour
         ButtonLogging.onClick.AddListener(delegate { pergiKePanel(7); });
         ButtonSinglePlay.onClick.AddListener(delegate { pergiKePanel(8); });
         ButtonCredits.onClick.AddListener(delegate { pergiKePanel(9); });
+		ButtonChangeRight.onClick.AddListener (delegate { pergiKePanel(10); });
+		ButtonChangeLeft.onClick.AddListener (delegate { pergiKePanel(11); });	
         //ButtonBack.onClick.AddListener(delegate { pergiKePanel(0); });
         for (int i = 0; i < ButtonBack.Length; i++)
         {
@@ -167,5 +173,19 @@ public class MenuController : MonoBehaviour
             ProfilePanel.SetActive(false);
             ScorePanel.SetActive(false);
         }
+		if (panelId == 10)
+		{
+			ButtonChangeRight.gameObject.SetActive (false);
+			ButtonChangeLeft.gameObject.SetActive (true);
+		}
+		if (panelId == 11)
+		{
+			ButtonChangeRight.gameObject.SetActive (true);
+			ButtonChangeLeft.gameObject.SetActive (false);
+		}
     }
+
+	public void GantiGambar(string namaGambar){
+		gambar.sprite = Resources.Load<Sprite> ("Images/"+namaGambar) as Sprite;
+	}
 }
