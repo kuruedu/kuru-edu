@@ -2,8 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Multiplayer\MyNetManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Multiplayer\MyNetManager.cs" Line="64" Column="49" />
-      <File FileName="Assets\Scripts\Multiplayer\MyNetDiscovery.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\Multiplayer\MyNetManager.cs" Line="116" Column="51" />
+      <File FileName="Assets\Scripts\MenuController.cs" Line="155" Column="10" />
+      <File FileName="Assets\Scripts\PlayerControlMulti.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TeleportControllerMulti.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\QuizGeneratorMulti.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Multiplayer\PlayerNetworked.cs" Line="26" Column="30" />
+      <File FileName="Assets\Scripts\Multiplayer\MyNetDiscovery.cs" Line="24" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

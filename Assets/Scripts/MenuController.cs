@@ -40,6 +40,11 @@ public class MenuController : MonoBehaviour
 	public Text theScore;
 	public Image gambar;
 
+	public Button HostGames;
+	public Button RefreshServer;
+	public Text RefreshText;
+	public Text ServIP;
+
     private bool LoggedOut = false;
     // Use this for initialization+
     void Start()
@@ -50,9 +55,11 @@ public class MenuController : MonoBehaviour
         ScorePanel.SetActive(false);
         SettingPanel.SetActive(false);
 		SC = GameObject.Find ("AudioManager").GetComponent<SoundController> ();
+		GPSACS = GameObject.FindObjectOfType<GooglePlayServices_Access> ();
 		gambar.sprite = Resources.Load<Sprite> ("Images/profile") as Sprite;
 
 		myScore =  PlayerPrefs.GetInt ("score");
+	
 
         ButtonPlay.onClick.AddListener(delegate { pergiKePanel(1); });
         ButtonProfile.onClick.AddListener(delegate { pergiKePanel(2); });
@@ -122,9 +129,14 @@ public class MenuController : MonoBehaviour
             ProfilePanel.SetActive(false);
             SettingPanel.SetActive(false);
             */
-			int intBestScore = PlayerPrefs.GetInt ("score");
-			GameObject.FindObjectOfType<GooglePlayServices_Access> ().tambahScore (intBestScore);
-            GPSACS.bukaLeaderBoard();
+			if (GPSACS.sudahLogin) {
+				int intBestScore = PlayerPrefs.GetInt ("score");
+				GPSACS.tambahScore (intBestScore);
+				GPSACS.bukaLeaderBoard ();
+			} else {
+				GPSACS.LoginGoogle ();
+			}
+
         }
         if (panelId == 4)
         {
@@ -141,7 +153,11 @@ public class MenuController : MonoBehaviour
         }
         if (panelId == 6)
         {
-            GPSACS.bukaAchievement();
+			if (GPSACS.sudahLogin) {
+				GPSACS.bukaAchievement();
+			} else {
+				GPSACS.LoginGoogle ();
+			}
         }
         if (panelId == 7)
         {

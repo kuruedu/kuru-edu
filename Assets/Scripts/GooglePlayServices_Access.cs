@@ -18,6 +18,8 @@ public class GooglePlayServices_Access : MonoBehaviour {
 	public string UserName;
 	public string UserID;
 	public Texture2D UserPic;
+
+	public bool sudahLogin = false;
 	//public string ProfilePic;
 
 
@@ -45,10 +47,12 @@ public class GooglePlayServices_Access : MonoBehaviour {
 				{
 					Debug.Log("You've successfully logged in"); //cetak kalimat untuk debugging
 					getPlayerDetail();
+					sudahLogin = true;
 				}
 				else //jika gagal
 				{
 					Debug.Log("Login failed for some reason"); //cetak kalimat untuk debugging
+					sudahLogin = false;
 				}
 			});
 	}
@@ -142,6 +146,7 @@ public class GooglePlayServices_Access : MonoBehaviour {
 	public void signOut(){
 		((PlayGamesPlatform)Social.Active).SignOut(); //melakukan proses signout dari account Google yang sedang aktif
 		PlayerPrefs.SetString("name","");
+		sudahLogin = false;
 	}
 
 	public void Login(){

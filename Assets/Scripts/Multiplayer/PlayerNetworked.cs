@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerNetworked : NetworkBehaviour {
 
@@ -9,6 +11,7 @@ public class PlayerNetworked : NetworkBehaviour {
 	public GameObject theCanvas;
 	public PlayerControlMulti PC;
 	public GameObject WaitOther;
+	public Button batalPermainan;
 
 	public override void OnStartLocalPlayer ()
 	{
@@ -16,6 +19,11 @@ public class PlayerNetworked : NetworkBehaviour {
 		aud.enabled = true;
 		theCanvas.SetActive (true);
 		PC.enabled = true;
+		batalPermainan.onClick.AddListener (stopNetworkGame);
+	}
+
+	void stopNetworkGame(){
+		SceneManager.LoadScene (0);
 	}
 
 	void Update(){

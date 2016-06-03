@@ -92,19 +92,37 @@ public class MyNetManager : NetworkManager
 		}
 	}
 
-
+	*/
 	void OnLevelWasLoaded(int level){
 		if (level == 0) {
-			//setupSceneButton ();
-			MenuGameNya.SetActive(true);
+			HostGames = GameObject.FindObjectOfType<MenuController>().HostGames;
+			RefreshServer = GameObject.FindObjectOfType<MenuController>().RefreshServer;
+			RefreshText = GameObject.FindObjectOfType<MenuController>().RefreshText;
+			ServIP = GameObject.FindObjectOfType<MenuController>().ServIP;
+
+			HostGames.onClick.RemoveAllListeners ();
+			HostGames.onClick.AddListener (StartupHost);
+
+			//JoinGames.onClick.RemoveAllListeners ();
+			//JoinGames.onClick.AddListener (JoinGame);
+
+			RefreshServer.onClick.RemoveAllListeners ();
+			RefreshServer.onClick.AddListener (RefreJo);
+
+			//Disconnect.onClick.RemoveAllListeners ();
+			//Disconnect.onClick.AddListener (DisconnectGame);
+
+			//DCButton (false);
+			NetworkManager.singleton.networkAddress = null;
+
+			DisconnectGame ();
 			print ("level 1 laoded");
 		} else {
-			//setupOtherSceneButton ();
-			MenuGameNya.SetActive(false);
+			
 			print ("level ex laoded");
 		}
 	}
-	*/
+
 	void Update(){
 		//	numPlayer.text = "Player :" +(int)GameObject.FindGameObjectsWithTag ("Player").Length;
 		if (NetworkManager.singleton.networkAddress == null) {
